@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results - Pickle Paradise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff5ec;
+      color: #3e2b18;
+    }
+
+    nav {
+      background-color: rgba(107, 66, 38, 0.95);
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav a {
+      color: #f5deb3;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #6b4226;
+      margin-bottom: 30px;
+    }
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: #fffdf9;
+      width: 240px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #6b4226;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .no-results {
+      text-align: center;
+      color: #a04535;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+
+    .footer {
+      background-color: rgba(107, 66, 38, 0.95);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Pickle Paradise</h2>
+    <div>
+      <a href="/">Home</a>
+      <a href="/veg_pickles">Veg Pickles</a>
+      <a href="/non_veg_pickles">Non-Veg Pickles</a>
+      <a href="/snacks">Snacks</a>
+      <a href="/cart">🛒Cart</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Search Results for "<em>{{ query }}</em>"</h2>
+
+    {% if results %}
+      <div class="results">
+        {% for item in results %}
+          <a href="{{ item.link }}" class="card">
+            <img src="{{ item.image }}" alt="{{ item.name }}">
+            <h3>{{ item.name }}</h3>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-results">
+        😞 Sorry, no results found for "<strong>{{ query }}</strong>"
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Pickle Paradise | Crafted with ❤️ for flavor lovers
+  </div>
+
+</body>
+</html>

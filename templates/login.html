@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Pickle Paradise</title>
+    <style>
+        body {
+           margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("/static/images/spices_bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2b18;
+        }
+
+        nav {
+            background-color: #6b4226;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #f5deb3;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #6b4226;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #6b4226;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #8b5e3c;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-link a {
+            color: #6b4226;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #6b4226;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="display: flex; align-items: center;">
+  <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+  <h1 style="margin: 0;">Pickle Paradise</h1>
+  </div>
+
+        <div>
+            <a href="/">🏠Home</a>
+            <a href="/signup">📝Signup</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form method="POST">
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br>
+    <label>Password:</label><br>
+    <input type="password" name="password" required><br><br>
+    <button type="submit">Login</button>
+  </form>
+
+        <div class="signup-link">
+            Don't have an account? <a href="/signup">Sign up here</a>
+        </div>
+    </div>
+
+    <div class="footer">
+         &copy; 2025 Pickle Paradise | Made with ❤️ for pickle lovers
+    </div>
+
+</body>
+</html>

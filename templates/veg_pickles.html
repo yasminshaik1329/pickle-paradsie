@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veg Pickles - Pickle Paradise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("/static/images/spices_bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2b18;
+    }
+
+    nav {
+      background-color: rgba(107, 66, 38, 0.95);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    nav a {
+      color: #f5deb3;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav form {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+
+    nav input[type="text"] {
+      padding: 8px;
+      border-radius: 6px 0 0 6px;
+      border: none;
+      font-size: 14px;
+      outline: none;
+    }
+
+    nav button {
+      padding: 8px 12px;
+      background-color: #f5deb3;
+      color: #3e2b18;
+      font-weight: bold;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #5a321f;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f5deb3;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #4a2f1f;
+      line-height: 1.6;
+    }
+
+    .product {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background-color: #fffefc;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .product.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .product img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #f0e0d6;
+      flex-shrink: 0;
+    }
+
+    .product-details {
+      flex: 1;
+    }
+
+    .product-details h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #6b4226;
+    }
+
+    .stars {
+      color: #ffb703;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .product-details p {
+      margin: 5px 0;
+      font-size: 15px;
+    }
+
+    .product-details form button {
+      margin-top: 8px;
+      padding: 10px 16px;
+      background-color: #6b4226;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .product-details form button:hover {
+      background-color: #a06d4c;
+    }
+
+    .footer {
+      background-color: rgba(107, 66, 38, 0.95);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+
+  <!-- Scroll animation & smooth hash scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.product').forEach(el => observer.observe(el));
+
+      // Smooth scroll if hash exists
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 300);
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div style="display: flex; align-items: center;">
+      <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+      <h1 style="margin: 0;">Pickle Paradise</h1>
+    </div>
+
+    <div style="display: flex; align-items: center;">
+      <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="Search pickles..." required>
+        <button type="submit">Search</button>
+      </form>
+      <a href="/">🏠 Home</a>
+      <a href="/non_veg_pickles">🍖 Non-Veg</a>
+      <a href="/snacks">🥨 Snacks</a>
+      <a href="/cart">🛒 Cart</a>
+      <a href="/login">🔐 Login</a>
+      <a href="/about">ℹ️ About</a>
+      <a href="/contact_us">📞 Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Veg Pickles</h2>
+    <p class="description">
+      Taste the essence of nature with our Veg Pickles — from spicy mango and zesty lemon to fiery red chilli and tangy gongura. Each jar is hand-packed with love, tradition, and a burst of South Indian flavor!
+    </p>
+
+    {% for item in products %}
+    <div class="product" id="{{ item.name | lower | replace(' ', '-') }}">
+      <img src="{{ item.image }}" alt="{{ item.name }}">
+      <div class="product-details">
+        <h3>{{ item.name }}</h3>
+
+        {% if item.rating %}
+        <div class="stars">
+          {% for star in range(item.rating) %}
+            ★
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if item.description %}
+        <p>{{ item.description }}</p>
+        {% endif %}
+
+        <p>Price: ₹{{ item.price }}</p>
+        <p>Weight: {{ item.weight }}</p>
+        <form method="POST" action="/add_to_cart">
+          <input type="hidden" name="name" value="{{ item.name }}">
+          <input type="hidden" name="price" value="{{ item.price }}">
+          <input type="hidden" name="weight" value="{{ item.weight }}">
+          <button type="submit">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Pickle Paradise | Made with ❤️ for pickle lovers
+  </div>
+
+</body>
+</html>

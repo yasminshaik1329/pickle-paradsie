@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Pickle Paradise</title>
+    <style>
+        body {
+            margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("/static/images/spices_bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2b18;
+        }
+
+        nav {
+            background-color: #6b4226;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #f5e0c0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #6b4226;
+            margin-bottom: 30px;
+        }
+
+        form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        form button {
+            background-color: #6b4226;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #8b5e3c;
+        }
+
+        .footer {
+            background-color: #6b4226;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="display: flex; align-items: center;">
+  <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+  <h1 style="margin: 0;">Pickle Paradise</h1>
+  </div>
+
+        <div>
+            <a href="/">🏠Home</a>
+            <a href="/veg_pickles">🌶️Veg Pickles</a>
+            <a href="/non_veg_pickles">🍖Non-Veg Pickles</a>
+            <a href="/snacks">🥨Snacks</a>
+            <a href="/cart">🛒Cart</a>
+            <a href="/about">ℹ️About</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form action="/contact_us" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="footer">
+       &copy; 2025 Pickle Paradise | Made with ❤️ for pickle lovers
+    </div>
+
+</body>
+</html>

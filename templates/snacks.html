@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snacks - Pickle Paradise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("/static/images/spices_bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2b18;
+      position: relative;
+    }
+
+
+    nav {
+      background: linear-gradient(to right, #6b4226, #8c5d3a);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav form {
+      display: flex;
+      align-items: center;
+    }
+
+    nav input[type="text"] {
+      padding: 6px;
+      border-radius: 8px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    nav button {
+      padding: 8px 12px;
+      background: #f5deb3;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f5deb3;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff4c2;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.96);
+      padding: 30px;
+      margin: 40px auto;
+      border-radius: 14px;
+      max-width: 1050px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #5a321f;
+      position: relative;
+    }
+
+    .container h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #c2996c;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 16px;
+      max-width: 850px;
+      margin: 20px auto 30px;
+      color: #4a2f1f;
+      line-height: 1.6;
+    }
+
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px 30px;
+      margin: 25px 0;
+      width: 100%;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .product.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .product img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-right: 25px;
+      border: 3px solid #f3e1d0;
+      flex-shrink: 0;
+    }
+
+    .product > div {
+      flex: 1;
+    }
+
+    .product h3 {
+      margin: 0 0 10px;
+      color: #6b4226;
+      font-size: 22px;
+    }
+
+    .product p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    .stars {
+      color: #ffb703;
+      font-size: 18px;
+      margin: 5px 0 10px;
+    }
+
+    .product form button {
+      margin-top: 10px;
+      padding: 10px 16px;
+      background-color: #6b4226;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .product form button:hover {
+      background-color: #a06d4c;
+    }
+
+    .footer {
+      background-color: rgba(107, 66, 38, 0.95);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+
+  <!-- Scroll Animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.product').forEach(el => observer.observe(el));
+    });
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div style="display: flex; align-items: center;">
+      <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+      <h2 style="margin: 0;">Pickle Paradise</h2>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="🔍 Search snacks..." required>
+        <button type="submit">Search</button>
+      </form>
+      <a href="/">🏠 Home</a>
+      <a href="/veg_pickles">🌶️ Veg</a>
+      <a href="/snacks">🥨 Snacks</a>
+      <a href="/non_veg_pickles">🍖Non Veg </a>
+      <a href="/login">🔐 Login</a>
+      <a href="/about">ℹ️ About</a>
+      <a href="/contact_us">📞 Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Snacks</h2>
+    <p class="description">
+      Discover our irresistible homemade snacks — crispy, crunchy, and packed with authentic flavor. Whether you're craving spicy mixtures or savory bites to pair with chai, Pickle Paradise snacks are made to satisfy and delight.
+    </p>
+
+    {% for item in products %}
+    <div class="product" id="{{ item.name | lower | replace(' ', '-') }}">
+      <img src="{{ item.image }}" alt="{{ item.name }}">
+      <div>
+        <h3>{{ item.name }}</h3>
+
+        {% if item.rating %}
+        <div class="stars">
+          {% for star in range(item.rating) %}
+            ★
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if item.description %}
+        <p>{{ item.description }}</p>
+        {% endif %}
+
+        <p>Price: ₹{{ item.price }}</p>
+        <p>Weight: {{ item.weight }}</p>
+        <form method="POST" action="/add_to_cart">
+          <input type="hidden" name="name" value="{{ item.name }}">
+          <input type="hidden" name="price" value="{{ item.price }}">
+          <input type="hidden" name="weight" value="{{ item.weight }}">
+          <button type="submit">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Pickle Paradise | Made with ❤️ for snack lovers
+  </div>
+
+  <!-- Optional: Smooth scroll if hash present -->
+  <script>
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 500);
+      }
+    }
+  </script>
+
+</body>
+</html>

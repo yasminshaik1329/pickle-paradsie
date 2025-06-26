@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success - Pickle Paradise</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fffdf4;
+            margin: 0;
+            color: #3e2b18;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #6b4226;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #f5e0c0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .message-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .message-container h2 {
+            color: #6b4226;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .message-container p {
+            font-size: 18px;
+            color: #5a3b2e;
+            max-width: 600px;
+        }
+
+        .message-container a {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #6b4226;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .message-container a:hover {
+            background-color: #8c5d3a;
+        }
+
+        .footer {
+            background-color: #6b4226;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="display: flex; align-items: center;">
+  <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+  <h1 style="margin: 0;">Pickle Paradise</h1>
+  </div>
+
+        <div>
+            <a href="/">🏠Home</a>
+            <a href="/cart">🛒Cart</a>
+        </div>
+    </nav>
+
+    <div class="message-container">
+        <h2>Thank You!</h2>
+        <p>{{ message or "Your request has been received. We appreciate your trust in Pickle Paradise!" }}</p>
+        <a href="/">Go to Home</a>
+    </div>
+
+    <div class="footer">
+       &copy; 2025 Pickle Paradise | Made with ❤️ for pickle lovers
+    </div>
+
+</body>
+</html>

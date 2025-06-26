@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart - Pickle Paradise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("/static/images/spices_bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #3e2b18;
+    }
+
+    nav {
+      background-color: #6b4226;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      color: white;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: #f5deb3;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #6b4226;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f7e4c5;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .qty-btn {
+      padding: 4px 10px;
+      font-size: 16px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .qty-display {
+      padding: 0 10px;
+      font-weight: bold;
+    }
+
+    .remove-btn {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background-color: #a93226;
+    }
+
+    .checkout-btn {
+      display: block;
+      margin: 30px auto 10px;
+      background-color: #6b4226;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .checkout-btn:hover {
+      background-color: #8c5d3a;
+    }
+
+    .empty {
+      text-align: center;
+      color: #999;
+      margin-top: 50px;
+    }
+
+    .footer {
+      background-color: #6b4226;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+   <div style="display: flex; align-items: center;">
+  <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+  <h1 style="margin: 0;">Pickle Paradise</h1>
+  </div>
+
+    <div>
+      <a href="/">🏠Home</a>
+      <a href="/veg_pickles">🌶️Veg</a>
+      <a href="/non_veg_pickles">🍖Non-Veg</a>
+      <a href="/snacks">🥨Snacks</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Your Shopping Cart</h2>
+
+    {% if cart_items %}
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price (₹)</th>
+          <th>Weight</th>
+          <th>Quantity</th>
+          <th>Subtotal (₹)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart_items %}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.weight }}</td>
+          <td>
+            <div class="quantity-controls">
+              <form method="POST" action="/update_quantity">
+                <input type="hidden" name="item_name" value="{{ item.name }}">
+                <input type="hidden" name="change" value="-1">
+                <button type="submit" class="qty-btn">-</button>
+              </form>
+              <span class="qty-display">{{ item.quantity }}</span>
+              <form method="POST" action="/update_quantity">
+                <input type="hidden" name="item_name" value="{{ item.name }}">
+                <input type="hidden" name="change" value="1">
+                <button type="submit" class="qty-btn">+</button>
+              </form>
+            </div>
+          </td>
+          <td>₹{{ item.price * item.quantity }}</td>
+          <td>
+            <form action="/remove_from_cart" method="post">
+              <input type="hidden" name="item_name" value="{{ item.name }}">
+              <button type="submit" class="remove-btn">Remove</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h3 style="text-align:right; margin-top:20px;">Total: ₹{{ total }}</h3>
+
+    <a href="/checkout" class="checkout-btn">Proceed to Checkout</a>
+
+    {% else %}
+    <p class="empty">Your cart is empty.</p>
+    {% endif %}
+  </div>
+
+  <div class="footer">
+       &copy; 2025 Pickle Paradise | Made with ❤️ for pickle lovers
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Pickle Paradise</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff9ec;
+            margin: 0;
+            color: #3e2b18;
+        }
+
+        nav {
+            background-color: #6b4226;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #f5e0c0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .about-container {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .about-container h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #5a381e;
+        }
+
+        .about-container img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #6b4226;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="display: flex; align-items: center;">
+  <img src="/static/images/logo.png" alt="Pickle Paradise Logo" style="height: 150px; margin-right: 50px;">
+  <h1 style="margin: 0;">Pickle Paradise</h1>
+  </div>
+
+        <div>
+            <a href="/">🏠Home</a>
+            <a href="/veg_pickles">🌶️Veg Pickles</a>
+            <a href="/non_veg_pickles">🍖Non-Veg Pickles</a>
+            <a href="/snacks">🥨Snacks</a>
+            <a href="/cart">🛒Cart</a>
+        </div>
+    </nav>
+
+    <div class="about-container">
+        <h2>About Pickle Paradise</h2>
+        <p>
+            Welcome to <strong>Pickle Paradise</strong> — your one-stop destination for premium homemade pickles and authentic snacks.
+            Born out of a passion for tradition and flavor, we bring you a handpicked selection of vegetarian and non-vegetarian pickles made with love and locally sourced ingredients.
+        </p>
+
+        <p>
+            Our recipes are passed down from generations and carefully crafted to preserve the essence of regional spices and age-old techniques.
+            Whether you're craving the tangy taste of mango pickles or the fiery punch of chicken pickle, we have something to delight every palate.
+        </p>
+
+        <p>
+            At Pickle Paradise, quality and hygiene are our top priorities. Every jar is packed fresh, ensuring that the flavors remain intact when they reach your table.
+            We also offer a growing range of crunchy and delicious snacks perfect for any occasion.
+        </p>
+
+        <p>
+            Thank you for choosing Pickle Paradise — where every bite is a journey into tradition.
+        </p>
+
+        <img src="{{ url_for('static', filename='images/about-pickles.jpg') }}" alt="About Pickle Paradise">
+    </div>
+
+    <div class="footer">
+       &copy; 2025 Pickle Paradise | Made with ❤️ for pickle lovers
+    </div>
+
+</body>
+</html>
