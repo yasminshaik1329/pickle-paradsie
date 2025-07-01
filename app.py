@@ -239,7 +239,7 @@ We will ship your items soon!"""
             server.starttls()
             server.login(EMAIL_ADDRESS,EMAIL_PASSWORD)
             text=msg.as_string()
-            server.sendmail(EMAIL_ADDRESS,to_email,text)
+            server.sendmail(EMAIL_ADDRESS,email,text)
             server.quit()
             print("Email sent successfully")
             return True
