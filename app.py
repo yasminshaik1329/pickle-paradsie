@@ -24,8 +24,8 @@ orders_table = dynamodb.Table('Orders')
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_ADDRESS = 'your_email@gmail.com'
-EMAIL_PASSWORD = 'your_gmail_app_password'
+EMAIL_ADDRESS = '228x1a4429@khitguntur.ac.in'
+EMAIL_PASSWORD = 'ejfo brjo wdml zvyw'
 
 # Product data with more items
 veg_pickles = [
@@ -237,9 +237,9 @@ We will ship your items soon!"""
         try:
             server=smtplib.SMTP(SMTP_SERVER,SMTP_PORT)
             server.starttls()
-            server.login(SENDER_EMAIL,SENDER_PASSWORD)
+            server.login(EMAIL_ADDRESS,EMAIL_PASSWORD)
             text=msg.as_string()
-            server.sendmail(SENDER_EMAIL,to_email,text)
+            server.sendmail(EMAIL_ADDRESS,to_email,text)
             server.quit()
             print("Email sent successfully")
             return True
