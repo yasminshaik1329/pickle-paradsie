@@ -24,8 +24,8 @@ orders_table = dynamodb.Table('Orders')
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_ADDRESS = '228x1a4429@khitguntur.ac.in'
-EMAIL_PASSWORD = 'ejfo brjo wdml zvyw'
+EMAIL_ADDRESS = 'yasmincsd4429@gmail.com'
+EMAIL_PASSWORD = 'hxge ksof isob cxxf'
 
 # Product data with more items
 veg_pickles = [
