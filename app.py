@@ -18,7 +18,7 @@ def inject_now():
     return{'now':datetime.now} 
 
 
-dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 user_table = dynamodb.Table('Users')
 orders_table = dynamodb.Table('Orders')
 
