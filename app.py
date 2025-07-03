@@ -30,32 +30,32 @@ EMAIL_ADDRESS = 'yasmincsd4429@gmail.com'
 EMAIL_PASSWORD = 'hxge ksof isob cxxf'
 
 veg_pickles = [
-    {'id': 1, 'name': 'Mango Pickle', 'price': 120, 'weight': '500g', 'spice_level': 5, 'description': 'Traditional raw mango chunks spiced and sun-cured for that classic tangy punch.', 'image': '/static/images/mango.jpg', 'rating': 5},
-    {'id': 2, 'name': 'Lemon Pickle', 'price': 100, 'weight': '500g', 'spice_level': 3, 'description': 'Zesty lemon pieces pickled in salt and spices for a perfect balance of sour and spicy.', 'image': '/static/images/lemon.jpg', 'rating': 4},
-    {'id': 3, 'name': 'Tomato Pickle', 'price': 95, 'weight': '500g', 'spice_level': 4, 'description': 'Ripe tomatoes blended with fiery masala for a rich, tangy flavor explosion.', 'image': '/static/images/tomato.jpg', 'rating': 5},
-    {'id': 4, 'name': 'Amla Pickle', 'price': 85, 'weight': '500g', 'spice_level': 3, 'description': 'Vitamin-rich gooseberries pickled with mild spices for a sour, health-boosting bite.', 'image': '/static/images/amla.jpg', 'rating': 3},
-    {'id': 5, 'name': 'Mixed Veg Pickle', 'price': 110, 'weight': '500g', 'spice_level': 4, 'description': 'A medley of crunchy vegetables marinated in bold Andhra-style spices.', 'image': '/static/images/mixed.jpg', 'rating': 4},
-    {'id': 6, 'name': 'Red Chilli Pickle', 'price': 90, 'weight': '500g', 'spice_level': 5, 'description': 'Whole red chilies stuffed and soaked in aromatic, spicy oil for heat lovers.', 'image': '/static/images/chilli.jpg', 'rating': 5},
-    {'id': 7, 'name': 'Garlic Pickle', 'price': 95, 'weight': '500g', 'spice_level': 3, 'description': 'Whole garlic pods steeped in tangy masala — a pungent, flavorful delight.', 'image': '/static/images/garlic.jpg', 'rating': 4},
-    {'id': 8, 'name': 'Gongura Pickle', 'price': 105, 'weight': '500g', 'spice_level': 4, 'description': 'Tangy gongura leaves (sorrel) blended with spice-rich oil — a true Andhra specialty.', 'image': '/static/images/gongura.jpg', 'rating': 5}
+    {'id': 1, 'name': 'Mango Pickle', 'price': Decimal('120'), 'weight': '500g', 'spice_level': 5, 'description': 'Traditional raw mango chunks spiced and sun-cured for that classic tangy punch.', 'image': '/static/images/mango.jpg', 'rating': 5},
+    {'id': 2, 'name': 'Lemon Pickle', 'price': Decimal('100'), 'weight': '500g', 'spice_level': 3, 'description': 'Zesty lemon pieces pickled in salt and spices for a perfect balance of sour and spicy.', 'image': '/static/images/lemon.jpg', 'rating': 4},
+    {'id': 3, 'name': 'Tomato Pickle', 'price': Decimal('95'), 'weight': '500g', 'spice_level': 4, 'description': 'Ripe tomatoes blended with fiery masala for a rich, tangy flavor explosion.', 'image': '/static/images/tomato.jpg', 'rating': 5},
+    {'id': 4, 'name': 'Amla Pickle', 'price': Decimal('85'), 'weight': '500g', 'spice_level': 3, 'description': 'Vitamin-rich gooseberries pickled with mild spices for a sour, health-boosting bite.', 'image': '/static/images/amla.jpg', 'rating': 3},
+    {'id': 5, 'name': 'Mixed Veg Pickle', 'price': Decimal('110'), 'weight': '500g', 'spice_level': 4, 'description': 'A medley of crunchy vegetables marinated in bold Andhra-style spices.', 'image': '/static/images/mixed.jpg', 'rating': 4},
+    {'id': 6, 'name': 'Red Chilli Pickle', 'price': Decimal('90'), 'weight': '500g', 'spice_level': 5, 'description': 'Whole red chilies stuffed and soaked in aromatic, spicy oil for heat lovers.', 'image': '/static/images/chilli.jpg', 'rating': 5},
+    {'id': 7, 'name': 'Garlic Pickle', 'price': Decimal('95'), 'weight': '500g', 'spice_level': 3, 'description': 'Whole garlic pods steeped in tangy masala — a pungent, flavorful delight.', 'image': '/static/images/garlic.jpg', 'rating': 4},
+    {'id': 8, 'name': 'Gongura Pickle', 'price': Decimal('105'), 'weight': '500g', 'spice_level': 4, 'description': 'Tangy gongura leaves (sorrel) blended with spice-rich oil — a true Andhra specialty.', 'image': '/static/images/gongura.jpg', 'rating': 5}
 ]
 
 non_veg_pickles = [
-    {'id': 9, 'name': 'Prawn Pickle', 'price': 450, 'weight': '500g', 'spice_level': 3, 'description': 'Spicy, tangy prawns soaked in aromatic coastal masala.', 'image': '/static/images/prawn.jpg', 'rating': 5},
-    {'id': 10, 'name': 'Chicken Pickle', 'price': 400, 'weight': '500g', 'spice_level': 4, 'description': 'Juicy chicken with bold Andhra spices.', 'image': '/static/images/chicken.jpg', 'rating': 4},
-    {'id': 11, 'name': 'Fish Pickle', 'price': 550, 'weight': '500g', 'spice_level': 4, 'description': 'Boneless fish in a sharp, spicy, and tangy masala mix.', 'image': '/static/images/fish.jpg', 'rating': 4},
-    {'id': 12, 'name': 'Mutton Pickle', 'price': 800, 'weight': '500g', 'spice_level': 3, 'description': 'Juicy mutton pieces blended with bold, fiery spices.', 'image': '/static/images/mutton.jpg', 'rating': 4},
-    {'id': 13, 'name': 'Crab Pickle', 'price': 500, 'weight': '500g', 'spice_level': 5, 'description': 'Delicate crab meat pickled in rich, zesty Andhra flavors.', 'image': '/static/images/crab.jpg', 'rating': 5},
-    {'id': 14, 'name': 'Egg Pickle', 'price': 240, 'weight': '500g', 'spice_level': 2, 'description': 'Boiled eggs infused with flavorful, spiced oil and chilies.', 'image': '/static/images/egg.jpg', 'rating': 3}
+    {'id': 9, 'name': 'Prawn Pickle', 'price': Decimal('450'), 'weight': '500g', 'spice_level': 3, 'description': 'Spicy, tangy prawns soaked in aromatic coastal masala.', 'image': '/static/images/prawn.jpg', 'rating': 5},
+    {'id': 10, 'name': 'Chicken Pickle', 'price': Decimal('400'), 'weight': '500g', 'spice_level': 4, 'description': 'Juicy chicken with bold Andhra spices.', 'image': '/static/images/chicken.jpg', 'rating': 4},
+    {'id': 11, 'name': 'Fish Pickle', 'price': Decimal('550'), 'weight': '500g', 'spice_level': 4, 'description': 'Boneless fish in a sharp, spicy, and tangy masala mix.', 'image': '/static/images/fish.jpg', 'rating': 4},
+    {'id': 12, 'name': 'Mutton Pickle', 'price': Decimal('800'), 'weight': '500g', 'spice_level': 3, 'description': 'Juicy mutton pieces blended with bold, fiery spices.', 'image': '/static/images/mutton.jpg', 'rating': 4},
+    {'id': 13, 'name': 'Crab Pickle', 'price': Decimal('500'), 'weight': '500g', 'spice_level': 5, 'description': 'Delicate crab meat pickled in rich, zesty Andhra flavors.', 'image': '/static/images/crab.jpg', 'rating': 5},
+    {'id': 14, 'name': 'Egg Pickle', 'price': Decimal('240'), 'weight': '500g', 'spice_level': 2, 'description': 'Boiled eggs infused with flavorful, spiced oil and chilies.', 'image': '/static/images/egg.jpg', 'rating': 3}
 ]
 
 snacks = [
-    {'id': 15, 'name': 'Mixture', 'price': 80, 'weight': '250g', 'description': 'A crunchy blend of sev, nuts, and spices — the ultimate anytime snack.', 'image': '/static/images/mixture.jpg', 'rating': 5},
-    {'id': 16, 'name': 'Murukku', 'price': 70, 'weight': '250g', 'description': 'Crispy spiral sticks made from rice flour and sesame — delightfully addictive.', 'image': '/static/images/murukku.jpeg', 'rating': 4},
-    {'id': 17, 'name': 'Banana Chips', 'price': 85, 'weight': '250g', 'description': 'Thinly sliced raw bananas fried to golden crispness with a hint of salt.', 'image': '/static/images/banana.jpeg', 'rating': 3},
-    {'id': 18, 'name': 'Ribbon Pakoda', 'price': 75, 'weight': '250g', 'description': 'Flat, ribbon-shaped snack with a spicy, crunchy bite in every strip.', 'image': '/static/images/ribbon.jpg', 'rating': 5},
-    {'id': 19, 'name': 'Kara Sev', 'price': 65, 'weight': '250g', 'description': 'Spiced chickpea flour noodles deep-fried for a fiery, crunchy treat.', 'image': '/static/images/sev.jpeg', 'rating': 4},
-    {'id': 21, 'name': 'Thattai', 'price': 60, 'weight': '200g', 'description': 'Flat, crunchy discs made with rice flour, spices, and lentils — perfectly savory.', 'image': '/static/images/thattai.jpeg', 'rating': 5}
+    {'id': 15, 'name': 'Mixture', 'price': Decimal('80'), 'weight': '250g', 'description': 'A crunchy blend of sev, nuts, and spices — the ultimate anytime snack.', 'image': '/static/images/mixture.jpg', 'rating': 5},
+    {'id': 16, 'name': 'Murukku', 'price': Decimal('70'), 'weight': '250g', 'description': 'Crispy spiral sticks made from rice flour and sesame — delightfully addictive.', 'image': '/static/images/murukku.jpeg', 'rating': 4},
+    {'id': 17, 'name': 'Banana Chips', 'price': Decimal('85'), 'weight': '250g', 'description': 'Thinly sliced raw bananas fried to golden crispness with a hint of salt.', 'image': '/static/images/banana.jpeg', 'rating': 3},
+    {'id': 18, 'name': 'Ribbon Pakoda', 'price': Decimal('75'), 'weight': '250g', 'description': 'Flat, ribbon-shaped snack with a spicy, crunchy bite in every strip.', 'image': '/static/images/ribbon.jpg', 'rating': 5},
+    {'id': 19, 'name': 'Kara Sev', 'price': Decimal('65'), 'weight': '250g', 'description': 'Spiced chickpea flour noodles deep-fried for a fiery, crunchy treat.', 'image': '/static/images/sev.jpeg', 'rating': 4},
+    {'id': 21, 'name': 'Thattai', 'price': Decimal('60'), 'weight': '200g', 'description': 'Flat, crunchy discs made with rice flour, spices, and lentils — perfectly savory.', 'image': '/static/images/thattai.jpeg', 'rating': 5}
 ]
 
 @app.route('/')
