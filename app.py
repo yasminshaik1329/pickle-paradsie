@@ -22,6 +22,9 @@ dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 user_table = dynamodb.Table('Users')
 orders_table = dynamodb.Table('Orders')
 
+ENABLE_SNS=True
+SNS_TOPIC_ARN='your_sns_topic_arn'
+
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 EMAIL_ADDRESS = 'yasmincsd4429@gmail.com'
